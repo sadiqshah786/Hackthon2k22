@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMIT-Attendance System</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+        <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="login_page" onload="loaderShow()">
+    <div id="loader" class="loader_wrapper">
+        <!-- <div id="loader"></div> -->
+        <div class="loader-5 center"><span></span></div>
+
+    </div>
+
+    <div class="form">
+        <div class="container">
+           
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form_wrapper">
+                        
+                        <div class="form_message">
+                            <p>Welcome Sir !</p>
+                            <h4>Admin Log In</h4>
+                        </div>
+                       
+                        <div class="forms">
+                            <form action="">
+                                <div class="row">
+                                    <div class="mb-3">
+                                        <div class="input_group">
+                                            <input type="email" class="form-control" id="signInEmail"
+                                            placeholder="Admin Email ID">
+                                            <span><img src="assests/img/mail.png" alt=""></span>
+                                        </div>
+                                        
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <div class="input_group">
+                                            <input type="password" class="form-control" id="signInPassword"
+                                            placeholder="Admin Password">
+                                            <span><img src="assests/img/lock.png" alt=""></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="buttonS login">
+                                    <button type="button" id="loginBtn" class="btn  btn-lg loginBtn"><span>Log In</span>
+                                        <div class="spinner-border text-light" role="status">
+                                            <span class="visually-hidden"></span>
+                                          </div>
+                                    </button>
+                                </div>
+
+                                <div class="buttonS mt-4">
+                                    <!-- <button type="button" class="btn  btn-lg"> <span><img src="assests/img/apple.png" alt=""></span> <span>Log In with Apple</span></button> -->
+                                    <!-- <p>Or login Using Email</p> -->
+                                </div>
+                                <div class="have_account">
+                                    <p><a id="credentials" >VIEW CREDNTIALS</a></p>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="col-md-6">
+                    <div class="left_img">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- login Errors  -->
+    <div class="custom-toast">
+        <div class="custom-toast-content">
+            <div class="custom-message">
+                <span class="text text-1" id="error">Email Required</span>
+            </div>
+        </div>
+        <i class="fa-solid fa-xmark close"></i>
+        <div class="custom-progress"></div>
+    </div>
+
+  
+ 
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="./components/loader.js"></script>
+    <script src="./components/error.js"></script>
+    <script type="module" src="app.js"></script>
+    <script type="module" src="index.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</body>
+
+</html>
