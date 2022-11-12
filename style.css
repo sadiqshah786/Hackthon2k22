@@ -25,7 +25,11 @@ body {
     box-sizing: border-box;
     overflow: hidden;
 }
-
+.nav-link {
+    font-family: SF Pro Display-l;
+    font-size: 16px;
+    padding: 12px 10px !important;
+}
 /* erorr notification  */
 .custom-toast {
     background: rgb(231, 76, 60);
@@ -284,30 +288,73 @@ i.fa-solid.fa-xmark.close {
 .first_last img {
     width: 28px;
 }
-.buttonS {
-    text-align: center;
+.buttonS.login button {
+    width: 100%;
+    background: #2673D1;
+    color: #fff;
+    font-weight: bold;
+    font-size: 16px;
+    letter-spacing: 1px;
 }
-.buttonS button.btn {
-    background: #EDF4FC;
+.buttonS button.btn, #signout {
+    background: rgb(237, 244, 252);
     font-size: 14px;
-    font-family: 'SF Pro Display-l';
-    border: 1px solid #2673d123;
-    padding: 18px;
+    font-family: "SF Pro Display-l";
+    border: 1px solid rgba(38, 115, 209, 0.137);
+    padding: 9px 20px;
     border-radius: 8px;
 }
-.header {
+.buttons.table_btn {
+    font-family: 'SF Pro Display-l';
+    font-weight: bold !important;
+}
+.buttons {
     text-align: right;
-    margin: 10px;
 }
 .main_left_right {
     display: flex;
+}
+.dashboard {
+    padding: 10px 30px;
+    backdrop-filter: blur(10px);
+    margin-bottom: 50px;
+}
+.last, .first {
+    width: 48%;
+}
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    color: #fff;
+    background: #2673D1;
+}
+.dashboard .row{
+    align-items: center;
+}
+.img_logo img {
+    width: 150px;
 }
 .buttonS span {
     font-size: 13px;
     color: #0f2d5285;
     margin-right: 10px;
 }
-
+select.form-select {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    border: 1px solid #2673d123;
+    background: #EDF4FC;
+    border-radius: 8px;
+    font-family: SF Pro Display-l;
+}
+.first_last.searchbtn button {
+    padding: 11px !important;
+}
+.searchbtn .first {
+    width: 75%;
+}
+.searchbtn .last{
+    width: 20%;
+}
 .btn:focus{
     box-shadow: none;
 }
@@ -349,6 +396,9 @@ i.fa-solid.fa-xmark.close {
     color: #F4F8FD;
     font-size: 16px;
     font-family: 'SF Pro Display-b';
+}
+.table_btn button{
+    background-color: #2673D1 !important;
 }
 .have_account p {
     text-align: center;
@@ -400,7 +450,36 @@ button.swal-button.swal-button--confirm {
 #credentials{
     cursor: pointer;
 }
+
+/* card css  */
+
+
+.img_wrapper img {
+    width: 150px;
+    border: 1px solid #2673D1;
+    border-radius: 10px;
+}
+
+.img_wrapper{
+    text-align: center;
+    width: 30%;
+}
+.custom_card {
+    display: flex;
+}
+.tabledata{
+    width: 70%;
+}
+.table th{
+    font-family: SF Pro Display-b;
+}
+.table td{
+    font-family: SF Pro Display-l;
+}
 @media screen and (max-width:600px) {
+    .custom_card{
+        flex-wrap: wrap;
+    }
     .form_wrapper {
         width: 100%;
         margin: 20px auto;

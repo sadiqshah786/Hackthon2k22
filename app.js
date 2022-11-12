@@ -1,6 +1,6 @@
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-app.js";
-import { getAuth, signOut, onAuthStateChanged, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js";
-import { getFirestore, doc, setDoc, getDoc, collection, getDocs } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-firestore.js";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-app.js";
+import { getAuth, signOut, onAuthStateChanged, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-auth.js";
+import { getFirestore, doc, setDoc, getDoc, collection, getDocs } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-firestore.js";
 
 
 
@@ -43,7 +43,7 @@ if (loginBtn) {
                     toastSuccess();
                 },2000)
                  setTimeout(() => {
-                    window.location.replace('dashboard.html')
+                    window.location = 'dashboard.html';
                 }, 4000)
             })
             .catch((error) => {
@@ -79,12 +79,11 @@ if (loginBtn) {
 
 
 
-
 let credentials = document.getElementById('credentials');
-credentials.addEventListener("click",()=>{
+if(credentials){credentials.addEventListener("click",()=>{
     swal("Admin : admin@smit.edu.pk\n Password : imadmin");
 
-})
+})} 
 
 
 

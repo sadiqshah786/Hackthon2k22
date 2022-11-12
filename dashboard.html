@@ -5,15 +5,400 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="header">
-        <p id="loginName"></p>
-        <div class="buttons">
-            <button id="signout">Sign out</button>
+
+
+  <section class="dashboard">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="img_logo">
+            <img src="assests/img/logo.jpg" alt="">
+          </div>
         </div>
+       
+        <div class="col-md-6">
+          <div class="header">
+            <p id="loginName"></p>
+            <div class="buttons">
+                <button id="signout">Sign out</button>
+            </div>
+        </div>
+        </div>
+      </div>
+   
     </div>
+  </section>
+
+  <section class="sidebar">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-2">
+          <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+            <button class="nav-link active" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">Add Students</button>
+            <button class="nav-link" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">Add Students Classess</button>
+            <button class="nav-link" id="v-pills-messages-tab" data-bs-toggle="pill" data-bs-target="#v-pills-messages" type="button" role="tab" aria-controls="v-pills-messages" aria-selected="false">Mark Attendance</button>
+            <button class="nav-link" id="v-pills-settings-tab" data-bs-toggle="pill" data-bs-target="#v-pills-settings" type="button" role="tab" aria-controls="v-pills-settings" aria-selected="false">Search Students Histroy</button>
+            <button class="nav-link" id="v-pills-preview-tab" data-bs-toggle="pill" data-bs-target="#v-pills-preview" type="button" role="tab" aria-controls="v-pills-preview" aria-selected="false">Manage Students Data</button>
+         
+        </div>
+        </div>
+        <div class="col-md-10">
+           
+            <div class="tab-content" id="v-pills-tabContent">
+              <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+
+                <div class="forms">
+                  <form action="">
+                      <div class="row">
+                          <div class="first_last">
+                              <div class="first">
+                                  <div class="mb-3">
+                                      <div class="input_group">
+                                          <input type="text" class="form-control" id="studentName"
+                                              placeholder="Student Name">
+                                      </div>
+
+                                  </div>
+                              </div>
+
+                              <div class="last">
+                                  <div class="mb-3">
+                                      <div class="input_group">
+                                          <input type="text" class="form-control" id="fatherName"
+                                              placeholder="Father Name">
+                                      </div>
+
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="first_last">
+                            <div class="first">
+                                <div class="mb-3">
+                                    <div class="input_group">
+                                        <input type="tel" class="form-control" id="rollNum"
+                                            placeholder="Roll Number">
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="last">
+                                <div class="mb-3">
+                                    <div class="input_group">
+                                        <input type="tel" class="form-control" id="contact"
+                                            placeholder="Contact Number">
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="first_last">
+                          <div class="first">
+                              <div class="mb-3">
+                                  <div class="input_group">
+                                      <input type="number" class="form-control" id="cnic"
+                                          placeholder="CNIC Number">
+                                  </div>
+
+                              </div>
+                          </div>
+
+                          <!-- <div class="last">
+                              <div class="mb-3">
+                                  <div class="input_group">
+                                      <input type="text" class="form-control" id="classes"
+                                          placeholder="Course Name">
+                                  </div>
+
+                              </div>
+                          </div> -->
+                      </div>
+
+                          <div class="mb-3">
+                              <div class="input_group">
+                                  <input type="file" id="studentPic" class="form-control" accept="image/x-png,image/gif,image/jpeg">
+                              </div>
+
+                          </div>
+                         <div class="mb-3">
+                          <select id="classData" class="form-select" aria-label="Default select example">
+                            <option selected>Transfer other Classes</option>
+                          </select>
+                         </div>
+
+                      </div>
+                      
+                      <div class="buttonS singnup login">
+                          <button type="button" onclick="addStudent()" class="btn  btn-lg loginBtn"><span>Add Student</span> 
+                                  <div class="spinner-border text-light" role="status">
+                                      <span class="visually-hidden"></span>
+                                    </div>
+                              </button>
+                      </div>
+
+                     
+
+                  </form>
+
+
+
+              </div>
+              </div>
+              <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+                <div class="forms">
+                    <form action="">
+                        <div class="row">
+                            <div class="mb-3">
+                                <select id="timing" class="form-select" aria-label="Default select example">
+                                    <option value="0" selected disabled>Class Timings</option>
+                                    <option>9AM-11AM</option>
+                                    <option>11AM-1PM</option>
+                                    <option>6PM-8PM</option>
+                                    
+                                </select>
+                               </div>
+                           <div class="mb-3">
+                            <select id="schedule" class="form-select" aria-label="Default select example">
+                                <option value="0" selected disabled>Schedule of classes</option>
+                                <option>M W F</option>
+                                <option >T T S</option>
+                                <option >Weedend</option>
+                                
+                            </select>
+                           </div>
+                           <div class="mb-3">
+                            <select id="teacher" class="form-select" aria-label="Default select example">
+                                <option value="0"  selected disabled>Teacher’s name</option>
+                                <option >Sir Ghhous Ahmed</option>
+                                <option >Sir Kashif Suleman</option>
+                                <option >Sir Ishaq Mujhani</option>
+                            </select>
+                           </div>
+                           <div class="mb-3">
+                            <select id="section" class="form-select" aria-label="Default select example">
+                                <option value="0" selected disabled>Section name</option>
+                                <option >A</option>
+                                <option >B</option>
+                                <option >C</option>
+                                
+                            </select>
+                           </div>
+                           <div class="mb-3">
+                            <select id="course" class="form-select" aria-label="Default select example">
+                                <option value="0" selected disabled>Course Name</option>
+                                <option >Web and Mobile App</option>
+                                
+                            </select>
+                           </div>
+                           <div class="mb-3">
+                            <select id="batch" class="form-select" aria-label="Default select example">
+                                <option value="0" selected disabled>Batch Number</option>
+                                <option>9</option>
+                                <option>10</option>
+                                <option>11</option>
+                                
+                            </select>
+                           </div>
+  
+                        </div>
+                        
+                        <div class="buttonS sheculeOfClassesbtn singnup login">
+                            <button onclick="getClassValue();"  type="button" id="signupBtn" class="btn  btn-lg loginBtn">Add Student Classes</span> 
+                                    <div class="spinner-border text-light" role="status">
+                                        <span class="visually-hidden"></span>
+                                      </div>
+                                </button>
+                        </div>
+  
+                        
+  
+                    </form>
+  
+  
+  
+                </div>
+              </div>
+              <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
+                <div class="forms">
+                    <form action="">
+                        <div class="row">
+                          <div class="first_last">
+                            <div class="first">
+                                <div class="mb-3">
+                                    <div class="input_group">
+                                        <input type="text" class="form-control" id="rollNumberAtt"
+                                            placeholder="Roll Number">
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="last">
+                                <div class="mb-3">
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Availablity</option>
+                                        <option value="1">Present</option>
+                                        <option value="2">Leave</option>
+                                        <option value="3">Absent</option>
+                                        
+                                    </select>
+                                   </div>
+                            </div>
+                            
+
+                          
+                          </div>
+                          <div class="buttonS singnup login">
+                            <button type="button" id="AttendanceBtn" class="btn  btn-lg loginBtn"><span>Mark Attendance</span> 
+                                    <div class="spinner-border text-light" role="status">
+                                        <span class="visually-hidden"></span>
+                                      </div>
+                                </button>
+                        </div>
+  
+                        </div>
+                        
+                        
+  
+                        
+  
+                    </form>
+  
+  
+  
+                </div>
+
+              </div>
+              <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
+                <div class="forms">
+                    <form action="">
+                        <div class="row">
+                          <div class="first_last searchbtn">
+                            <div class="first">
+                                <div class="mb-3">
+                                    <div class="input_group">
+                                        <input type="text" class="form-control" id="rollNumberAtt"
+                                            placeholder="Roll Number">
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="last">
+                                <div class="buttonS singnup login">
+                                    <button type="button" id="AttendanceBtn" class="btn  btn-lg loginBtn"><span>Search</span> 
+                                            <div class="spinner-border text-light" role="status">
+                                                <span class="visually-hidden"></span>
+                                              </div>
+                                        </button>
+                                </div>
+                            </div>
+                            
+                          </div>
+                          </div>
+
+                          <div class="row">
+                            <div class="col-md-12">
+                               <div class="custom_card">
+                                <div class="img_wrapper">
+                                    <img src="assests/img/sadiq.jpeg" alt="">
+                                </div>
+                                <div class="tabledata">
+                                    data
+                                </div>
+                               </div>
+                              
+                          </div>
+  
+                        </div>
+                    </form>
+                </div>
+              </div>
+              <div class="tab-pane fade" id="v-pills-preview" role="tabpanel" aria-labelledby="v-pills-preview-tab">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <table class="table" id="tableStudent">
+                                <thead>
+                                  <tr>
+                                    <th scope="col">S.No</th>
+                                    <th scope="col">Roll Numbber</th>
+                                    <th scope="col">Full Name</th>
+                                    <th scope="col">Father Name</th>
+                                    <th scope="col">Contact Number</th> 
+                                    <th scope="col">CNIC Number</th>
+                                    <th scope="col">Course</th>
+                                    <th scope="col">Image</th>
+                                    <th scope="col">Delete</th>
+                                    <th scope="col">Edit</th>
+
+
+
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <th scope="row">1</th>
+                                    <td>1234567</td>
+                                    <td>Sadiq Shah</td>
+                                    <td>Naseeb Shah</td>
+                                    <td>03076523149</td>
+                                    <td>4250115001803</td>
+                                    <td>Web and Mobile Application</td>
+                                    <td>URL</td>
+                                    <td>
+                                        <div class="buttons table_btn">
+                                            <button class="btn-primary" id="signout">Delete</button>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="buttons table_btn">
+                                            <button class="btn-primary" id="signout">Edit</button>
+                                        </div>
+                                    </td>
+                                  </tr>
+
+                                  <tr>
+                                    <th scope="row">1</th>
+                                    <td>1234567</td>
+                                    <td>Sadiq Shah</td>
+                                    <td>Naseeb Shah</td>
+                                    <td>03076523149</td>
+                                    <td>4250115001803</td>
+                                    <td>Web and Mobile Application</td>
+                                    <td>URL</td>
+                                    <td>
+                                        <div class="buttons table_btn">
+                                            <button class="btn-primary" id="signout">Delete</button>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="buttons table_btn">
+                                            <button class="btn-primary" id="signout">Edit</button>
+                                        </div>
+                                    </td>
+                                  </tr>
+                                 
+                                </tbody>
+                              </table>
+                        </div>
+                    </div>
+                </div>
+              </div>
+              
+            </div>
+          
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+   
    
     
 
@@ -23,5 +408,7 @@
         crossorigin="anonymous"></script>
   
     <script type="module" src="dashboard.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
 </body>
 </html>
